@@ -4,6 +4,16 @@ import Header from './Commponents/Header';
 import SideMenu from './Commponents/SideMenu';
 
 function App() {
+  const articles = [{id: 1, articleName: "PinguCoder", articleBody: "Platform e-learning"},
+  {id: 2, articleName: "Learn React", articleBody: "with PinguCoder"},
+  {id: 3, articleName:"Learn Angular", articleBody: "with PinguCoder"},
+  {id: 4, articleName: "Learn VueJs", articleBody: "with PinguCoder" },
+  {id: 5, articleName: "Learn ExpressJS", articleBody:"with PinguCoder"}
+];
+
+const articleList = articles.map((article) => {
+return (<Article key = {article.id} articleName ={article.articleName} articleBody = {article.articleBody} />)})
+  
   return (
     <div className="App">
 
@@ -13,13 +23,8 @@ function App() {
   <div style={{display: "flex", width: "60%", justifyContent: "center"}}>
 {/* Article content */}
      <div style={{width: "70%"}}>
-     <Article  articleName="PinguCoder" articleBody="Platform e-learning"/>
-     <Article articleName='Learn React' articleBody="with PinguCoder"/>
-     <Article articleName='Learn Angular' articleBody="with PinguCoder" />
-     <Article articleName='Learn VueJs' articleBody="with PinguCoder"/>
-     <Article articleName='Learn ExpressJS' articleBody="with PinguCoder"/>
-
-     </div>
+      {articleList}
+    </div>
 {/*== Article content ==*/}
 
 {/* SideMenu content */}
